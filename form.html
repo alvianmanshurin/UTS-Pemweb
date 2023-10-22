@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Formulir Pendaftaran Mahasiswa</title>
+</head>
+<body>
+    <header>
+        <h1>Website Pendaftaran Mahasiswa</h1>
+        <img src="logo.png" alt="Logo">
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Halaman Utama</a></li>
+            <li><a href="form.html">Form</a></li>
+            <li><a href="table.html">Tabel</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h2>Formulir Pendaftaran Mahasiswa</h2>
+        <form action="table.html" method="get">
+            <label for="nama">Nama:</label>
+            <input type="text" id="nama" name="nama" required><br>
+
+            <label for="nim">NIM:</label>
+            <input type="text" id="nim" name="nim" required><br>
+
+            <label for="prodi">Program Studi:</label>
+            <input type="text" id="prodi" name="prodi" required><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required><br>
+
+            <label for="jenis_kelamin">Jenis Kelamin:</label>
+            <input type="radio" id="pria" name="jenis_kelamin" value="Pria">Pria
+            <input type="radio" id="wanita" name="jenis_kelamin" value="Wanita">Wanita<br>
+
+            <label for="tanggal_lahir">Tanggal Lahir:</label>
+            <input type="date" id="tanggal_lahir" name="tanggal_lahir" required><br>
+
+            <label for="alamat">Alamat:</label>
+            <textarea id="alamat" name="alamat" required></textarea><br>
+
+            <button type="submit">Daftar</button>
+        </form>
+    </main>
+    <footer>
+        <p>&copy; 2023 Website Pendaftaran Mahasiswa</p>
+    </footer>
+
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const form = document.querySelector('form');
+    
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                const formData = new FormData(form);
+                const table = document.querySelector('table');
+    
+                const newRow = table.insertRow(-1);
+    
+                formData.forEach(function (value, key) {
+                    const cell = newRow.insertCell(-1);
+                    cell.textContent = value;
+                });
+    
+                form.reset();
+            });
+        });
+    </script>
+    
+</body>
+</html>
