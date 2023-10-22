@@ -11,7 +11,8 @@ td, th {
 }
 
 th {
-    background-color:gainsboro;
+    color: aliceblue;
+    background-color:cadetblue;
 }
 
 h2 {
@@ -36,6 +37,10 @@ nav {
 table {
     margin: auto;
     padding: 10px;
+}
+
+tr:nth-child(even){
+    background-color:gainsboro;
 }
 
 .nav {
