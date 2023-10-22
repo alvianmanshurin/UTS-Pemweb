@@ -1,79 +1,95 @@
+
+<!-- Nama   : Alvian Manshurin -->
+<!-- Nim    : 120140162 -->
+<!-- Kelas  : RC -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Formulir Pendaftaran Mahasiswa</title>
+    <link
+      rel="shortcut icon"
+      href="assets\img\favicon.png"
+      type="image/x-icon" />
+    <title>Pendataan Mahasiswa</title>
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
     <header>
-        <h1>Website Pendaftaran Mahasiswa</h1>
-        <img src="logo.png" alt="Logo">
+        <table>
+            <tr>
+                <td class="profile"><img src="assets/img/favicon.png" width="75px"></td>
+                <td class="profile"><h2>Pendataan Mahasiswa Volunteer</h2></td>
+            </tr>
+        </table>
     </header>
+    
     <nav>
-        <ul>
-            <li><a href="index.html">Halaman Utama</a></li>
-            <li><a href="form.html">Form</a></li>
-            <li><a href="table.html">Tabel</a></li>
-        </ul>
+        <table>
+            <tr>
+                <td><a class="nav" href="index.html">Beranda</a></td>
+                <td><a class="nav" href="form.html">Form</a></td>
+                <td><a class="nav" href="table.html">Tabel</a></td>
+            </tr>
+        </table>
     </nav>
-    <main>
+
+    <section class="forms">
         <h2>Formulir Pendaftaran Mahasiswa</h2>
         <form action="table.html" method="get">
-            <label for="nama">Nama:</label>
+            <label for="nama">Nama:</label><br>
             <input type="text" id="nama" name="nama" required><br>
 
-            <label for="nim">NIM:</label>
+            <label for="nim">NIM:</label><br>
             <input type="text" id="nim" name="nim" required><br>
 
-            <label for="prodi">Program Studi:</label>
+            <label for="prodi">Program Studi:</label><br>
             <input type="text" id="prodi" name="prodi" required><br>
 
-            <label for="email">Email:</label>
+            <label for="email">Email:</label><br>
             <input type="email" id="email" name="email" required><br>
 
-            <label for="password">Password:</label>
+            <label for="password">Password:</label><br>
             <input type="password" id="password" name="password" required><br>
 
-            <label for="jenis_kelamin">Jenis Kelamin:</label>
-            <input type="radio" id="pria" name="jenis_kelamin" value="Pria">Pria
+            <label for="jenis_kelamin">Jenis Kelamin:</label><br>
+            <input type="radio" id="pria" name="jenis_kelamin" value="Pria">Pria<br>
             <input type="radio" id="wanita" name="jenis_kelamin" value="Wanita">Wanita<br>
 
-            <label for="tanggal_lahir">Tanggal Lahir:</label>
+            <label for="tanggal_lahir">Tanggal Lahir:</label><br>
             <input type="date" id="tanggal_lahir" name="tanggal_lahir" required><br>
 
-            <label for="alamat">Alamat:</label>
+            <label for="alamat">Alamat:</label><br>
             <textarea id="alamat" name="alamat" required></textarea><br>
 
             <button type="submit">Daftar</button>
         </form>
-    </main>
-    <footer>
-        <p>&copy; 2023 Website Pendaftaran Mahasiswa</p>
-    </footer>
+    </section>
 
-    
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const form = document.querySelector('form');
-    
+
             form.addEventListener('submit', function (e) {
                 e.preventDefault();
                 const formData = new FormData(form);
                 const table = document.querySelector('table');
-    
+
                 const newRow = table.insertRow(-1);
-    
+
                 formData.forEach(function (value, key) {
                     const cell = newRow.insertCell(-1);
                     cell.textContent = value;
                 });
-    
+
                 form.reset();
             });
         });
     </script>
     
+    <footer>
+        &copy; 2023 Website Pendataan Mahasiswa
+    </footer>
 </body>
 </html>
